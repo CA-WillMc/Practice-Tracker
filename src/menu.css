@@ -48,5 +48,32 @@ header {
   transform: scaleX(1);
 }
 body {
-  margin-top: 10%;
+  margin-top: 15%;
+  text-align: center;
+}
+/*display to fix (left)*/
+#addTodo {
+  background-color: aqua;
+  border-radius: 50px;
+  left: 33%;
+  height: 100px;
+  width: 500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#listTodo {
+  list-style: none;
+}
+.elemTodo {
+  background-color: rgb(239, 154, 36);
+  border-radius: 50px;
+  left: 31%;
+  height: 50px;
+  width: 500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
