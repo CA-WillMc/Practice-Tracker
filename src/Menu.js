@@ -72,7 +72,6 @@ export default function Menu() {
             ></input>
             <button onClick={handleAddTodoClick}>add</button>
           </div>
-          <h3>To do list</h3>
           <ul id="listTodo">
             {todos.map((todo, index) => (
               <li className="elemTodo" key={index}>
