@@ -1,3 +1,5 @@
+Music practice can get tedious, this practice tracker will help you set daily goals and log your day to day progress on a calendar! If you complete your to-do list for the day you'll earn a gold start!  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
