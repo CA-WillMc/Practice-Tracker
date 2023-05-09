@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useRef } from "react";
 import "./menu.css";
 import "./index.css";
+import Metronome from "./Metronome";
 
 export default function Menu() {
   function handleLinkClick(event) {
@@ -35,6 +36,7 @@ export default function Menu() {
     newTodos.splice(index, 1);
     setTodos(newTodos);
   }
+
   return (
     <>
       <header>
@@ -72,8 +74,8 @@ export default function Menu() {
             ></input>
             <button onClick={handleAddTodoClick}>add</button>
           </div>
-          <ul id="listTodo">
-            {todos.map((todo, index) => (
+          {todos.map((todo, index) => (
+            <div id="listTodo">
               <li className="elemTodo" key={index}>
                 {todo}
                 <button id="practiceTodo">:)</button>
@@ -84,8 +86,8 @@ export default function Menu() {
                   X
                 </button>
               </li>
-            ))}
-          </ul>
+            </div>
+          ))}
         </section>
         <section id="Calendar">
           <h2>Calendar</h2>
@@ -93,7 +95,19 @@ export default function Menu() {
         </section>
         <section id="Practice">
           <h2>Practice</h2>
-          <p>Metronome, repetition counter, complete</p>
+          <div id="displayGoal">
+            1. Display the name of the goal and the target to acheive
+          </div>
+          <div id="metronome">
+            Metronome
+            <Metronome />
+          </div>
+          <div id="completed">
+            <button id="done">
+              3. once the target is acheive, complete the goal and it will cross
+              it off the to do list
+            </button>
+          </div>
         </section>
         <section id="Explore">
           <h2>Explore</h2>
