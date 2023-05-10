@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import "./menu.css";
 import "./index.css";
 import Metronome from "./Metronome";
+import Calendar from "./Calendar";
 
 export default function Menu() {
   function handleLinkClick(event) {
@@ -89,7 +90,7 @@ export default function Menu() {
         </section>
         <section id="Calendar">
           <h2>Calendar</h2>
-          <p>Display a calendar that display the goals (on hover)</p>
+          <Calendar />
         </section>
         <section id="Practice">
           <h2>Practice</h2>
