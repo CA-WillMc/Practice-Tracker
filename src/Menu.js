@@ -32,12 +32,33 @@ export default function Menu() {
     newTodos.splice(index, 1);
     setTodos(newTodos);
   }
+  //Once the Todo is completed : Hide completion button, clear the todo, update the todos
+  function complete() {
+    const displayDivButton = document.getElementById("complete");
+    displayDivButton.setAttribute("hidden", "hidden");
+    const newGoal = document.getElementById("elemTodo");
+    for (let t in todos) {
+      if (
+        todos[t].replace(/\s/g, "") == newGoal.textContent.replace(/\s/g, "")
+      ) {
+        const todoItem = document.getElementById(t);
+        todoItem.style.backgroundColor = "Gray";
+      }
+    }
+    const updateGoal = document.getElementById("displayGoal");
+    updateGoal.innerHTML = ``;
+  }
+  //Display the a Todo and the completion button
   function displayDiv(index) {
+    const displayDivButton = document.getElementById("complete");
+    displayDivButton.removeAttribute("hidden", "hidden");
+    displayDivButton.style.display = true;
     const newGoal = document.getElementById("displayGoal");
-    newGoal.innerHTML = `<div class="elemTodo">
+    newGoal.innerHTML = `<div id="elemTodo" class="elemTodo">
     <p> ${todos[index]}</p>
-    <button>Complete</button>
     </div>`;
+    const targetElement = document.getElementById("elemTodo");
+    targetElement.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
@@ -73,7 +94,7 @@ export default function Menu() {
           </div>
           {todos.map((todo, index) => (
             <div id="listTodo">
-              <li className="elemTodo" key={index}>
+              <li className="elemTodo" id={index}>
                 {todo}
                 <button id="practiceTodo" onClick={() => displayDiv(index)}>
                   :)
@@ -94,9 +115,10 @@ export default function Menu() {
         </section>
         <section id="Practice">
           <h2>Practice</h2>
-          <div id="displayGoal">
-            1. Display the name of the goal and the target to acheive
-          </div>
+          <div id="displayGoal"></div>
+          <button id="complete" hidden onClick={complete}>
+            complete
+          </button>
           <div id="metronome">
             <Metronome />
           </div>
