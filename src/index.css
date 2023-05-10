@@ -1,16 +1,16 @@
 * {
   font-family: Whitney, "Open Sans", Helvetica, sans-serif;
 }
+/*need to find a better fix for the display of the login page*/
 #wraper-login {
-  display: block;
-  height: 100%;
-  width: 100%;
-
-  position: absolute;
+  height: 400px;
   z-index: 2;
   backdrop-filter: blur(30px);
   opacity: 1 !important;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 :root {
   --first-color: #7289da;

@@ -77,7 +77,7 @@ function Slider(props) {
       <div>{props.bpm} BPM</div>
       <input
         type="range"
-        min="60"
+        min="30"
         max="240"
         value={props.bpm}
         onChange={props.handleChange}

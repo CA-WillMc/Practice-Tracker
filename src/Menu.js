@@ -14,12 +14,7 @@ export default function Menu() {
   const [todos, setTodos] = useState([]);
   const textInputRef = useRef();
   const numberInputRef = useRef();
-  /*
-  function handleInputChange(event) {
-    const newTodo = setNewTodo(event.target.value);
-    setNewTodo([...todos, newTodo]);
-  }
-*/
+
   function handleAddTodoClick() {
     const newTodo =
       "Practice " +
@@ -35,6 +30,13 @@ export default function Menu() {
     const newTodos = [...todos];
     newTodos.splice(index, 1);
     setTodos(newTodos);
+  }
+  function displayDiv(index) {
+    const newGoal = document.getElementById("displayGoal");
+    newGoal.innerHTML = `<div class="elemTodo">
+    <p> ${todos[index]}</p>
+    <button>Complete</button>
+    </div>`;
   }
 
   return (
@@ -54,12 +56,6 @@ export default function Menu() {
           <a href="#Practice" onClick={handleLinkClick}>
             Practice
           </a>
-          <a href="#Explore" onClick={handleLinkClick}>
-            Explore
-          </a>
-          <a href="#Profil" onClick={handleLinkClick}>
-            Profil
-          </a>
         </nav>
       </header>
       <body>
@@ -78,7 +74,9 @@ export default function Menu() {
             <div id="listTodo">
               <li className="elemTodo" key={index}>
                 {todo}
-                <button id="practiceTodo">:)</button>
+                <button id="practiceTodo" onClick={() => displayDiv(index)}>
+                  :)
+                </button>
                 <button
                   id="deleteTodo"
                   onClick={() => handleDeleteTodoClick(index)}
@@ -99,23 +97,8 @@ export default function Menu() {
             1. Display the name of the goal and the target to acheive
           </div>
           <div id="metronome">
-            Metronome
             <Metronome />
           </div>
-          <div id="completed">
-            <button id="done">
-              3. once the target is acheive, complete the goal and it will cross
-              it off the to do list
-            </button>
-          </div>
-        </section>
-        <section id="Explore">
-          <h2>Explore</h2>
-          <p>Not sure yet</p>
-        </section>
-        <section id="Profil">
-          <h2>Profil</h2>
-          <p>Display user progress</p>
         </section>
       </body>
     </>
