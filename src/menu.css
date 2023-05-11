@@ -4,7 +4,8 @@ header {
   left: 0;
   width: 100%;
   padding-left: 50px 100px;
-  background-color: #49588e;
+  background-color: #232b2b;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +16,7 @@ header {
   font-weight: 500;
 }
 #io {
-  color: lightgreen;
+  color: rgb(239, 154, 36);
 }
 .navigation a {
   position: relative;
@@ -26,7 +27,7 @@ header {
   margin-right: 20px;
 }
 .navigation a:hover {
-  color: lightgreen;
+  color: rgb(239, 154, 36);
 }
 
 .navigation a::after {
@@ -55,15 +56,17 @@ body {
 }
 /*display to fix (left)*/
 #addTodo {
-  background-color: aqua;
+  background-color: rgb(24, 24, 39);
   border-radius: 50px;
 
-  height: 100px;
-  width: 500px;
+  height: fit-content;
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
 }
 #listTodo {
   list-style: none;
@@ -84,7 +87,8 @@ body {
 }
 
 #Goals {
-  background-color: rgb(42, 42, 243);
+  background-color: #232b2b;
+  color: antiquewhite;
   border-radius: 50px;
   height: fit-content;
   width: 600px;
@@ -95,4 +99,20 @@ body {
   margin: auto;
   flex-direction: column;
   margin-top: 1vh;
+}
+
+#expandAdd {
+  background-color: rgb(24, 24, 39);
+  border-radius: 90%;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+}
+
+#plus {
+  height: 4vh;
+  width: 4vh;
+  color: #232b2b;
+  border-radius: 90%;
+  background-color: antiquewhite;
 }

@@ -4,6 +4,8 @@ import "./menu.css";
 import "./index.css";
 import Metronome from "./Metronome";
 import Calendar from "./Calendar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faTrashAlt, faPlay } from "@fortawesome/free-solid-svg-icons";
 
 export default function Menu() {
   function handleLinkClick(event) {
@@ -43,6 +45,12 @@ export default function Menu() {
       ) {
         const todoItem = document.getElementById(t);
         todoItem.style.backgroundColor = "Gray";
+
+        /*disable button only works for the first completed todo*/
+        let playButton = document.getElementById("practiceTodo");
+        playButton.setAttribute("hidden", "");
+        let trashButton = document.getElementById("deleteTodo");
+        trashButton.setAttribute("hidden", "");
       }
     }
     const updateGoal = document.getElementById("displayGoal");
@@ -59,6 +67,19 @@ export default function Menu() {
     </div>`;
     const targetElement = document.getElementById("elemTodo");
     targetElement.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function displayInput() {
+    textInputRef.current.removeAttribute("hidden", "hidden");
+    numberInputRef.current.removeAttribute("hidden", "hidden");
+    const addButton = document.getElementById("add");
+    addButton.removeAttribute("hidden", "hidden");
+    const hideAdd = document.getElementById("plus");
+    hideAdd.style.display = "none";
+  }
+  function completeTodo() {
+    //loop through todos
+    //if all backgroundcolors are gray => add star to the calendar
   }
 
   return (
@@ -82,32 +103,49 @@ export default function Menu() {
       </header>
       <body>
         <section id="Goals">
-          <h2>Goals</h2>
-          <div id="addTodo">
-            <input type="text" placeholder="Goal" ref={textInputRef}></input>
-            <input
-              type="text"
-              placeholder="repetition"
-              ref={numberInputRef}
-            ></input>
-            <button onClick={handleAddTodoClick}>add</button>
-          </div>
+          <h2>To do list</h2>
+
           {todos.map((todo, index) => (
             <div id="listTodo">
               <li className="elemTodo" id={index}>
                 {todo}
                 <button id="practiceTodo" onClick={() => displayDiv(index)}>
-                  :)
+                  <FontAwesomeIcon icon={faPlay} />
                 </button>
+
                 <button
                   id="deleteTodo"
                   onClick={() => handleDeleteTodoClick(index)}
                 >
-                  X
+                  <FontAwesomeIcon icon={faTrashAlt} />
                 </button>
               </li>
             </div>
           ))}
+          <div id="addTodo">
+            <div id="expandAdd">
+              <FontAwesomeIcon
+                icon={faPlus}
+                id="plus"
+                onClick={displayInput}
+              ></FontAwesomeIcon>
+            </div>
+            <input
+              type="text"
+              placeholder="Goal"
+              ref={textInputRef}
+              hidden
+            ></input>
+            <input
+              type="text"
+              placeholder="repetition"
+              ref={numberInputRef}
+              hidden
+            ></input>
+            <button onClick={handleAddTodoClick} id="add" hidden>
+              add
+            </button>
+          </div>
         </section>
         <section id="Calendar">
           <h2>Calendar</h2>
