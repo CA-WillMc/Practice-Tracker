@@ -5,7 +5,12 @@ import "./index.css";
 import Metronome from "./Metronome";
 import Calendar from "./Calendar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faTrashAlt, faPlay } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlus,
+  faTrashAlt,
+  faPlay,
+  faCheck,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Menu() {
   function handleLinkClick(event) {
@@ -131,21 +136,23 @@ export default function Menu() {
               ></FontAwesomeIcon>
             </div>
             <input
+              className="Todo"
               type="text"
               placeholder="Goal"
               ref={textInputRef}
               hidden
             ></input>
             <input
+              className="Todo"
               type="text"
               placeholder="repetition"
               ref={numberInputRef}
               hidden
             ></input>
-            <button onClick={handleAddTodoClick} id="add" hidden>
-              add
-            </button>
           </div>
+          <button onClick={handleAddTodoClick} id="add" hidden>
+            <FontAwesomeIcon icon={faCheck} />
+          </button>
         </section>
         <section id="Calendar">
           <h2>Calendar</h2>
