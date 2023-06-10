@@ -4,7 +4,7 @@ header {
   left: 0;
   width: 100%;
   padding-left: 50px 100px;
-  background-color: #232b2b;
+  background-color: white;
 
   display: flex;
   justify-content: space-between;
@@ -12,7 +12,7 @@ header {
   padding: 20px;
 }
 .name {
-  color: antiquewhite;
+  color: black;
   font-weight: 500;
 }
 #io {
@@ -21,7 +21,7 @@ header {
 .navigation a {
   position: relative;
   font-size: 1.1em;
-  color: antiquewhite;
+  color: black;
   font-weight: 500;
   text-decoration: none;
   margin-right: 20px;
@@ -71,10 +71,26 @@ body {
   list-style: none;
   margin-top: 1vh;
   margin-bottom: 0.5vh;
+  display: flex;
+  text-align: right;
+}
+#practiceTodo {
+  background-color: #04c59b;
+  box-shadow: 0 0 3px 0 #04c59b;
+  color: whitesmoke;
+  text-align: right;
+  border: none;
+  border-radius: 50px;
+  list-style: none;
+}
+#practiceTodo:hover {
+  color: #04c59b;
+  background-color: whitesmoke;
 }
 .elemTodo {
-  background-color: rgb(239, 154, 36);
-  box-shadow: 0 0 5px 0 rgb(239, 154, 36);
+  background-color: rgb(106, 195, 246);
+  box-shadow: 0 0 5px 0 rgb(106, 195, 246);
+  color: rgba(0, 0, 0, 0.374);
   border-radius: 50px;
   height: 50px;
   margin-top: 1vh;
@@ -87,8 +103,9 @@ body {
 }
 
 #Goals {
-  background-color: #232b2b;
-  color: antiquewhite;
+  background-color: whitesmoke;
+  box-shadow: 0 0 5px 0 #04c59b;
+  color: #04c59b;
   border-radius: 50px;
   height: fit-content;
   width: 600px;
@@ -102,21 +119,24 @@ body {
 }
 
 #expandAdd {
-  background-color: antiquewhite;
+  background-color: #04c59b;
+  box-shadow: 0 0 5px 0 #04c59b;
+  color: whitesmoke;
+  border-color: whitesmoke;
   border-radius: 90%;
   height: fit-content;
   width: fit-content;
   display: flex;
 }
 #expandAdd :hover {
-  background-color: rgb(239, 154, 36);
-  color: antiquewhite;
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+  color: #04c59b;
 }
 
 #plus {
   height: 4vh;
   width: 4vh;
-  color: #232b2b;
   border-radius: 90%;
 }
 .Todo {
@@ -139,10 +159,12 @@ body {
   margin-bottom: 1vh;
   height: 3vh;
   border-radius: 50px;
-  background-color: antiquewhite;
+  background-color: rgb(239, 154, 36);
+  box-shadow: 0 0 5p 0 rgb(239, 154, 36);
+  color: whitesmoke;
   border-style: none;
 }
 #add:hover {
-  background-color: rgb(239, 154, 36);
-  color: antiquewhite;
+  background-color: whitesmoke;
+  color: rgb(239, 154, 36);
 }

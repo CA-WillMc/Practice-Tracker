@@ -92,7 +92,7 @@ export default function Menu() {
       <header>
         <h1 class="name">
           Practice
-          <span id="io">.io</span>
+          <span id="io"> Tracker</span>
         </h1>
         <nav class="navigation">
           <a href="#Goals" onClick={handleLinkClick}>
